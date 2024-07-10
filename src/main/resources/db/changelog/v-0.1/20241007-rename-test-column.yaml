@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20241007-04
+      author: Arif
+      changes:
+        - renameColumn:
+            catalogName: postgres
+            columnDataType: varchar
+            newColumnName: test_name
+            oldColumnName: name
+            schemaName: public
+            tableName: test

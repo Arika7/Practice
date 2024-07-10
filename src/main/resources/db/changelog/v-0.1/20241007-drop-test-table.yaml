@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20241007-03
+      author: Arif
+      changes:
+        - dropTable:
+            cascadeConstraints: true
+            catalogName: postgres
+            schemaName: public
+            tableName: test

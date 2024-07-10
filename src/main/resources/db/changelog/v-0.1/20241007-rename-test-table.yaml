@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20241007-05
+      author: Arif
+      changes:
+        - renameTable:
+            catalogName: postgres
+            newTableName: tests
+            oldTableName: test
+            schemaName: public

@@ -1,0 +1,100 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1720570973706-1
+      author: Arif (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_cart
+                  name: id
+                  type: INT
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+            tableName: cart
+  - changeSet:
+      id: 1720570973706-2
+      author: Arif (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: cart_id
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: product_id
+                  type: INT
+            tableName: cart_product
+  - changeSet:
+      id: 1720570973706-3
+      author: Arif (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_product
+                  name: product_id
+                  type: INT
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: price
+                  type: INT
+              - column:
+                  name: category
+                  type: SMALLINT
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+            tableName: product
+  - changeSet:
+      id: 1720570973706-4
+      author: Arif (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: name
+            constraintName: uc_product_name
+            tableName: product
+  - changeSet:
+      id: 1720570973706-5
+      author: Arif (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: cart_id
+            baseTableName: cart_product
+            constraintName: fk_carpro_on_cart
+            referencedColumnNames: id
+            referencedTableName: cart
+  - changeSet:
+      id: 1720570973706-6
+      author: Arif (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: product_id
+            baseTableName: cart_product
+            constraintName: fk_carpro_on_product
+            referencedColumnNames: product_id
+            referencedTableName: product
+

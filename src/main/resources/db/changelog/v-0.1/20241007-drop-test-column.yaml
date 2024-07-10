@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20241007-02
+      author: Arif
+      changes:
+        - dropColumn:
+            catalogName: postgres
+            columnName: id
+            columns:
+              - column:
+                  name: name
+            schemaName: public
+            tableName: test

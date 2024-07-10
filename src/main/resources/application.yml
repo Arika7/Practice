@@ -7,10 +7,10 @@ spring:
     username: postgres
     password: postgres
   jpa:
-    properties:
-      hibernate:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
 
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-    generate-ddl: false
-
+  liquibase:
+    enabled: true
 

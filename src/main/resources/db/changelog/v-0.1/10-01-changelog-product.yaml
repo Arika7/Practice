@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1720570267188-1
+      author: Arif (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: product_pkey
+                  name: product_id
+                  type: INTEGER
+              - column:
+                  name: category
+                  type: SMALLINT
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: price
+                  type: INTEGER
+            tableName: product
+  - changeSet:
+      id: 1720570267188-2
+      author: Arif (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: name
+            constraintName: ukjmivyxk9rmgysrmsqw15lqr5b
+            tableName: product
